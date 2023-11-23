@@ -6,9 +6,7 @@
           <label
             for="identity"
             class="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Email</label
-          >
+          >Email</label>
           <input
             id="identity"
             class="shadow appearance-none borderrounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -24,13 +22,10 @@
           <label
             for="identity"
             class="block text-gray-700 text-sm font-bold mb-2"
-            >Password</label
-          >
-
+            >Password</label>
           <input
             aria-describedby="passwordHelp"
             v-model="password"
-
             class="shadow appearance-none borderrounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
@@ -42,8 +37,9 @@
 
         <div class="flex items-center justify-between">
           <button
-            class="bg-blue-600 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
+            class="bg-blue-600 hover:bg-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="button"
+            @click="login"
           >
             Sign In
           </button>
@@ -59,19 +55,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Login",
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
-  },
-  methods: {
-    login() {
-      console.log("logging in");
-    },
-  },
-};
+<script setup>
+  let email = ref('');
+  let password = ref('');
+
+  const config = useRuntimeConfig()
+  const ENV_APP_API = config.public.APP_API
+
+  const login = async () => {
+    const { token } = await $fetch(ENV_APP_API + '/auth/login', {
+        method:'POST',
+        body:JSON.stringify({
+          username: email.value,
+          password: password.value
+        })
+    })
+
+    if (token) {
+      useState('username', () => email);
+      return navigateTo('/employee');
+    }
+  }
+
+  defineExpose({
+    email,
+    password,
+    login,
+  })
+
 </script>
