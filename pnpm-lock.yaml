@@ -22,6 +22,9 @@ devDependencies:
   '@nuxtjs/tailwindcss':
     specifier: ^6.10.0
     version: 6.10.0(webpack@5.89.0)
+  '@pinia-plugin-persistedstate/nuxt':
+    specifier: ^1.2.0
+    version: 1.2.0(@pinia/nuxt@0.5.1)(pinia@2.1.7)
   nuxt:
     specifier: ^3.8.2
     version: 3.8.2(vite@4.5.0)
@@ -1520,6 +1523,21 @@ packages:
       '@parcel/watcher-win32-x64': 2.3.0
     dev: true
 
+  /@pinia-plugin-persistedstate/nuxt@1.2.0(@pinia/nuxt@0.5.1)(pinia@2.1.7):
+    resolution: {integrity: sha512-2rtgx5viGSMQMCoFYZMHguA2FhFKCUvw0PwETfqQegsWeBHlqk1/D0G/9xqep8Hq+c1BuFx+jNLJzoLXtYfivg==}
+    peerDependencies:
+      '@pinia/nuxt': ^0.5.0
+    dependencies:
+      '@nuxt/kit': 3.8.2
+      '@pinia/nuxt': 0.5.1(vue@3.3.8)
+      defu: 6.1.3
+      pinia-plugin-persistedstate: 3.2.0(pinia@2.1.7)
+    transitivePeerDependencies:
+      - pinia
+      - rollup
+      - supports-color
+    dev: true
+
   /@pinia/nuxt@0.5.1(vue@3.3.8):
     resolution: {integrity: sha512-6wT6TqY81n+7/x3Yhf0yfaJVKkZU42AGqOR0T3+UvChcaOJhSma7OWPN64v+ptYlznat+fS1VTwNAcbi2lzHnw==}
     dependencies:
@@ -1531,7 +1549,6 @@ packages:
       - supports-color
       - typescript
       - vue
-    dev: false
 
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -6353,6 +6370,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /pinia-plugin-persistedstate@3.2.0(pinia@2.1.7):
+    resolution: {integrity: sha512-tZbNGf2vjAQcIm7alK40sE51Qu/m9oWr+rEgNm/2AWr1huFxj72CjvpQcIQzMknDBJEkQznCLAGtJTIcLKrKdw==}
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.1.7(vue@3.3.8)
+    dev: true
+
   /pinia@2.1.7(vue@3.3.8):
     resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
     peerDependencies:
@@ -6368,7 +6393,6 @@ packages:
       '@vue/devtools-api': 6.5.1
       vue: 3.3.8
       vue-demi: 0.14.6(vue@3.3.8)
-    dev: false
 
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}

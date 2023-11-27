@@ -17,20 +17,13 @@
       </template>
     </tbody>
   </table>
-  <div class="flex justify-end">
-    <button @click="logout" class="p-3 bg-secondary text-white rounded-md mt-10"
-      >
-        <NuxtLink to="/employee/create">Create employee</NuxtLink>
-      </button
-    >
-  </div>
 </template>
 
 <script setup>
 import { useEmployeeStore } from '../stores/employee'
 
 const employeeStore = useEmployeeStore()
-employeeStore.fetchUsers()
+// employeeStore.fetchUsers()
 let users = computed(() => employeeStore.users)
 
 defineExpose({

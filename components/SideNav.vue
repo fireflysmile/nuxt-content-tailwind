@@ -19,7 +19,7 @@
         v-for="tab in tabs"
         :key="tab.path"
         :class="`${
-          currentRoute === tab.path ? 'text-secondary font-bold' : ''
+          currentRoute.includes(tab.path) ? 'text-secondary font-bold' : ''
         } pb-2`"
       >
         <NuxtLink :to="`${tab.path}`"> {{ tab.title }} </NuxtLink>

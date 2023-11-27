@@ -10,7 +10,7 @@
       <img @click="toggleOpen = true" src="/menu-open.png" class="h-7" />
     </div>
     <div class="w-full max-w-5xl max-h-screen px-12 overflow-y-auto pb-9 pt-5">
-      <div class="flex flex-col items-end mb-15">
+      <div class="flex flex-col items-end mb-10">
         <h1>
           Welcome <span class="text-primary">{{ USER_NAME }}</span
           >!
@@ -49,14 +49,17 @@ const tabs = [
   }
 ]
 
-const currentRoute = () => {
-  return this.$route.path;
-}
-const currentTab = () => {
-  return this.tabs.find((tab) => {
-    return tab.path === this.currentRoute;
-  });
-}
+const route = useRoute()
+
+const currentRoute = computed(() => {
+  return route.path;
+})
+
+const currentTab = computed(() => {
+  return tabs.find((tab) => {
+    return tab.path === currentRoute;
+  })
+})
 
 const logout = () => {
   authStore.logout()

@@ -3,8 +3,7 @@ interface UserInfo {
   password: string
 }
 
-export const useAuthStore = defineStore({
-  id: 'auth',
+export const useAuthStore = defineStore('auth', {
   actions: {
     async login(loginForm: UserInfo) {
       const config = useRuntimeConfig()
