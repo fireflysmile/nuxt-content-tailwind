@@ -56,30 +56,32 @@
 </template>
 
 <script setup>
-import { useAuthStore } from '../stores/userAuth'
-const authStore = useAuthStore()
+  setPageLayout('public')
+  let email = ref('');
+  let password = ref('');
 
-let email = ref('')
-let password = ref('')
+  const config = useRuntimeConfig()
+  const ENV_APP_API = config.public.APP_API
 
-const config = useRuntimeConfig()
-const ENV_APP_API = config.public.APP_API
+  const login = async () => {
+    const { token } = await $fetch(ENV_APP_API + '/auth/login', {
+        method:'POST',
+        body:JSON.stringify({
+          username: email.value,
+          password: password.value
+        })
+    })
 
-const login = () => {
-  const loginForm = {
-    username: email.value,
-    password: password.value
+    if (token) {
+      useState('username', () => email);
+      return navigateTo('/employee');
+    }
   }
 
-  authStore
-    .login(loginForm)
-    .then(() => navigateTo('/employee'))
-    .catch((error) => process.client && alert('Sorry, user or password not correct'))
-}
+  defineExpose({
+    email,
+    password,
+    login,
+  })
 
-defineExpose({
-  email,
-  password,
-  login,
-})
 </script>

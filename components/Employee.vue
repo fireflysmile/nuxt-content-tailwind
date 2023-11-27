@@ -20,16 +20,13 @@
 </template>
 
 <script setup>
-  definePageMeta({
-    layout: 'private'
-  })
-  const config = useRuntimeConfig()
-  const ENV_APP_API = config.public.APP_API
+const config = useRuntimeConfig()
+const ENV_APP_API = config.public.APP_API
 
-  const users = await $fetch(ENV_APP_API + "/users")
+const users = await $fetch(ENV_APP_API + "/users")
 
-  defineExpose({
-    users,
-  })
+defineExpose({
+  users,
+})
 
 </script>

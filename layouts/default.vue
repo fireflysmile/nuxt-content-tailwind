@@ -10,38 +10,55 @@
       <img @click="toggleOpen = true" src="/menu-open.png" class="h-7" />
     </div>
     <div class="w-full max-w-5xl max-h-screen px-12 overflow-y-auto pb-9 pt-5">
+      <div class="flex flex-col items-end mb-15">
+        <h1>
+          Welcome <span class="text-primary">{{ USER_NAME }}</span
+          >!
+        </h1>
+        <p class="mb-6 text-lg">
+          You have been given access to the private page 😁🤫
+        </p>
+        <button @click="logout" class="p-3 bg-secondary text-white rounded-md"
+          >Logout</button
+        >
+      </div>
       <slot />
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      open: false,
-      toggleOpen: true,
-      tabs: [
-        {
-          title: 'Register',
-          path: '/signup',
-        },
-        {
-          title: 'Login',
-          path: '/signin',
-        }
-      ],
-    };
+
+<script setup>
+import { useAuthStore } from '../stores/userAuth'
+
+const authStore = useAuthStore()
+
+const username = useCookie('username', {})
+const USER_NAME = username.value
+
+const open = false
+const toggleOpen = true
+const tabs = [
+  {
+    title: 'Employee',
+    path: '/employee',
   },
-  computed: {
-    currentRoute() {
-      return this.$route.path;
-    },
-    currentTab() {
-      return this.tabs.find((tab) => {
-        return tab.path === this.currentRoute;
-      });
-    },
-  },
-};
+  {
+    title: 'Company',
+    path: '/company',
+  }
+]
+
+const currentRoute = () => {
+  return this.$route.path;
+}
+const currentTab = () => {
+  return this.tabs.find((tab) => {
+    return tab.path === this.currentRoute;
+  });
+}
+
+const logout = () => {
+  authStore.logout()
+}
 </script>

@@ -1,8 +1,8 @@
-export default defineNuxtRouteMiddleware((to, from) => {
-  const username = useState('username');
+export default defineNuxtRouteMiddleware((event) => {
+  const token = useCookie('token')
 
-  if (!username.value) {
-    process.client && alert('Sorry, you need to fill your username');
-    return navigateTo('/signin');
+  if (!token.value) {
+    process.client && alert('Sorry, user or password not correct');
+    return navigateTo('/auth/signin');
   }
 });
