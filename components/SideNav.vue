@@ -12,7 +12,7 @@
         <img
           src="/menu-close.png"
           class="h-6"
-          @click="$emit('toggleOpen', false)"
+          @click="closeMenu"
         />
       </div>
       <div
@@ -28,8 +28,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ['tabs', 'currentRoute'],
-};
+<script setup>
+  const props = defineProps(['tabs', 'currentRoute'])
+  const emit = defineEmits(['toggleOpen'])
+
+  const closeMenu = () => {
+    emit('toggleOpen', false)
+  }
 </script>

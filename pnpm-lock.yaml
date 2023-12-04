@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@brutforce/vue3-paginate':
+    specifier: ^0.1.3
+    version: 0.1.3(vue@3.3.8)
   '@pinia/nuxt':
     specifier: ^0.5.1
     version: 0.5.1(vue@3.3.8)
@@ -365,6 +368,16 @@ packages:
       '@babel/helper-string-parser': 7.23.4
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
+
+  /@brutforce/vue3-paginate@0.1.3(vue@3.3.8):
+    resolution: {integrity: sha512-uubAwuVtsTiVwrR6W/qg69caNa0j+1G1GhGWvZqbM3ktToyqU3sjBSnK71At1UFVAvEPYYTEf3DeM0qcC00GdA==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: ^3.0.5
+    dependencies:
+      mitt: 3.0.1
+      vue: 3.3.8
+    dev: false
 
   /@cloudflare/kv-asset-handler@0.3.0:
     resolution: {integrity: sha512-9CB/MKf/wdvbfkUdfrj+OkEwZ5b7rws0eogJ4293h+7b6KX5toPwym+VQKmILafNB9YiehqY0DlNrDcDhdWHSQ==}
@@ -5641,6 +5654,10 @@ packages:
     dependencies:
       minipass: 3.3.6
       yallist: 4.0.0
+
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+    dev: false
 
   /mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}

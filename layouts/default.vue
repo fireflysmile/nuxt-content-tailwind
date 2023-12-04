@@ -4,7 +4,7 @@
       v-if="toggleOpen"
       :tabs="tabs"
       :currentRoute="currentRoute"
-      @toggleOpen="toggleOpen = $event"
+      @toggleOpen="toggleOpen = false"
     />
     <div v-else class="p-8">
       <img @click="toggleOpen = true" src="/menu-open.png" class="h-7" />
@@ -36,8 +36,7 @@ const authStore = useAuthStore()
 const username = useCookie('username', {})
 const USER_NAME = username.value
 
-const open = false
-const toggleOpen = true
+let toggleOpen = ref(true)
 const tabs = [
   {
     title: 'Employee',
