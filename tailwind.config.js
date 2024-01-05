@@ -14,7 +14,11 @@ module.exports = {
       light: '#E6EFF0',
       white: '#fff',
       black: '#000',
-    },
+      gray: {
+        '900': '#333333',
+        '300': '#ccc',
+      },
+    }
   },
   variants: {
     extend: {},

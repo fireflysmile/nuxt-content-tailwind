@@ -45,6 +45,10 @@ const tabs = [
   {
     title: 'Company',
     path: '/company',
+  },
+  {
+    title: 'Product',
+    path: '/product',
   }
 ]
 

@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 3007
   },
-  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
+  modules: ['@nuxt/content', '@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', 'nuxt-rating'],
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],
   },
