@@ -86,7 +86,7 @@
                 </a>
             </footer>
             <footer class="flex items-center justify-between p-2 md:p-4">
-              <NuxtRating :read-only="false" :ratingValue="item.rating || 0" />
+              <NuxtRating :read-only="false" :ratingValue="item.rating.rate || 0" />
             </footer>
           </article>
         </div>
@@ -185,3 +185,10 @@ defineExpose({
 })
 
 </script>
+
+
+<style>
+.average-rating::before {
+  position: relative;
+}
+</style>
