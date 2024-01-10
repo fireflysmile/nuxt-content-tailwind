@@ -60,14 +60,14 @@
       <div class="flex flex-wrap -mx-1 lg:-mx-4" v-if="products">
         <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" v-for="item in products" :key="item">
           <article class="overflow-hidden rounded-lg shadow-lg">
-            <a class="flex justify-center" href="#">
+            <NuxtLink :to="`/product/${item.id}`" class="flex justify-center">
               <img alt="Placeholder" class="block h-[120px] w-auto" :src="item.image">
-            </a>
+            </NuxtLink>
             <header class="flex items-center justify-between leading-tight p-2 md:p-4">
               <h1 class="text-lg truncate">
-                <a class="no-underline hover:underline text-black" :title="item.title" href="#">
+                <NuxtLink :to="`/product/${item.id}`" class="no-underline hover:underline text-black" :title="item.title">
                   {{ item.title }}
-                </a>
+                </NuxtLink>
               </h1>
               <p class="text-grey-darker text-sm">
                 ${{ item.price }}
@@ -162,8 +162,6 @@ let products_json = []
 await fetch('https://fakestoreapi.com/products')
 .then(res => res.json())
 .then(data => products_json = data);
-
-console.log('products_json   ', products_json)
 
 products = products_json && products_json.slice(0, 6)
 

@@ -73,7 +73,7 @@ const login = () => {
 
   authStore
     .login(loginForm)
-    .then(() => navigateTo('/employee'))
+    .then(() => navigateTo('/product'))
     .catch((error) => process.client && alert('Sorry, user or password not correct'))
 }
 

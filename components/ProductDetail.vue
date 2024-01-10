@@ -25,7 +25,7 @@
               </a>
               <img
                 class="object-contain w-full lg:h-full"
-                src="https://i.postimg.cc/0jwyVgqz/Microprocessor1-removebg-preview.png"
+                :src="products_detail.image"
                 alt=""
               />
               <a
@@ -55,7 +55,7 @@
                 >
                   <img
                     class="object-contain w-full lg:h-28"
-                    src="https://i.postimg.cc/Z5KhRkD6/download-1-removebg-preview.png"
+                    :src="products_detail.image"
                     alt=""
                   />
                 </a>
@@ -67,7 +67,7 @@
                 >
                   <img
                     class="object-contain w-full lg:h-28"
-                    src="https://i.postimg.cc/8kJBrw03/download-removebg-preview.png"
+                    :src="products_detail.image"
                     alt=""
                   />
                 </a>
@@ -79,7 +79,7 @@
                 >
                   <img
                     class="object-contain w-full lg:h-28"
-                    src="https://i.postimg.cc/0jwyVgqz/Microprocessor1-removebg-preview.png"
+                    :src="products_detail.image"
                     alt=""
                   />
                 </a>
@@ -91,7 +91,7 @@
                 >
                   <img
                     class="object-contain w-full lg:h-28"
-                    src="https://i.postimg.cc/0N4Kk1PN/black-microprocessors-removebg-preview.png"
+                    :src="products_detail.image"
                     alt=""
                   />
                 </a>
@@ -104,83 +104,20 @@
             <div class="mb-6">
               <span
                 class="px-2.5 py-0.5 text-xs text-blue-600 bg-blue-100 dark:bg-gray-700 rounded-xl dark:text-gray-200"
-                >New Arrival</span
+                >{{products_detail.category}}</span
               >
               <h2
                 class="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide text-gray-700 md:text-2xl dark:text-gray-300"
               >
-                Intel® Core™ i5-12600HX Processor (18M Cache, up to 4.60 GHz)
+                {{products_detail.title}}
               </h2>
               <div class="flex flex-wrap items-center mb-6">
-                <ul class="flex mb-4 mr-2 lg:mb-0">
-                  <li>
-                    <a href="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="w-4 mr-1 text-red-500 dark:text-gray-400 bi bi-star"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="w-4 mr-1 text-red-500 dark:text-gray-400 bi bi-star"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="w-4 mr-1 text-red-500 dark:text-gray-400 bi bi-star"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="w-4 mr-1 text-red-500 dark:text-gray-400 bi bi-star"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
+                <div class="rating flex mb-4 mr-2 lg:mb-0">
+                 <NuxtRating :read-only="false" :ratingValue="products_detail.rating.rate || 0" />
+                </div>
                 <a
                   class="mb-4 text-xs underline hover:text-blue-600 dark:text-gray-400 dark:hover:text-gray-300 lg:mb-0"
-                  href="#"
+                  href="./"
                 >
                   View the acer store
                 </a>
@@ -188,10 +125,10 @@
               <p
                 class="inline-block text-2xl font-semibold text-gray-700 dark:text-gray-400"
               >
-                <span>Rs.7,000.00</span>
+                <span>${{products_detail.price}}</span>
                 <span
                   class="ml-3 text-base font-normal text-gray-500 line-through dark:text-gray-400"
-                  >Rs.10,000.00</span
+                  >$200</span
                 >
               </p>
             </div>
@@ -199,7 +136,7 @@
               <h2
                 class="mb-2 text-lg font-bold text-gray-700 dark:text-gray-400"
               >
-                System Specs :
+                Description :
               </h2>
               <div class="bg-gray-100 dark:bg-gray-700 rounded-xl">
                 <div class="p-3 lg:p-5">
@@ -207,104 +144,7 @@
                     class="p-2 rounded-xl lg:p-6 dark:bg-gray-800 bg-gray-50"
                   >
                     <div class="flex flex-wrap justify-center gap-x-10 gap-y-4">
-                      <div class="w-full mb-4 md:w-2/5">
-                        <div class="flex">
-                          <span class="mr-3 text-gray-500 dark:text-gray-400">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="bi bi-diagram-3 w-7 h-7"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"
-                              ></path>
-                            </svg>
-                          </span>
-                          <div>
-                            <p
-                              class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400"
-                            >
-                              No. of cores
-                            </p>
-                            <h2
-                              class="text-base font-semibold text-gray-700 dark:text-gray-400"
-                            >
-                              12 Cores
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-full mb-4 md:w-2/5">
-                        <div class="flex">
-                          <span class="mr-3 text-gray-500 dark:text-gray-400">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="bi bi-gpu-card w-7 h-7"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                d="M4 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm7.5-1.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"
-                              ></path>
-                              <path
-                                d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .5.5V4h13.5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5H2v2.5a.5.5 0 0 1-1 0V2H.5a.5.5 0 0 1-.5-.5Zm5.5 4a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM9 8a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Z"
-                              ></path>
-                              <path
-                                d="M3 12.5h3.5v1a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.5v-1Zm4 1v-1h4v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5Z"
-                              ></path>
-                            </svg>
-                          </span>
-                          <div>
-                            <p
-                              class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400"
-                            >
-                              Graphic
-                            </p>
-                            <h2
-                              class="text-base font-semibold text-gray-700 dark:text-gray-400"
-                            >
-                              Intel UHD
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-full mb-4 lg:mb-0 md:w-2/5">
-                        <div class="flex">
-                          <span class="mr-3 text-gray-500 dark:text-gray-400">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="16"
-                              height="16"
-                              fill="currentColor"
-                              class="w-7 h-7 bi bi-cpu"
-                              viewBox="0 0 16 16"
-                            >
-                              <path
-                                d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"
-                              ></path>
-                            </svg>
-                          </span>
-                          <div>
-                            <p
-                              class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400"
-                            >
-                              Processor
-                            </p>
-                            <h2
-                              class="text-base font-semibold text-gray-700 dark:text-gray-400"
-                            >
-                              INTEL 80486
-                            </h2>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="w-full mb-4 lg:mb-0 md:w-2/5">
+                      <div class="w-full mb-4">
                         <div class="flex">
                           <span class="mr-3 text-gray-500 dark:text-gray-400">
                             <svg
@@ -330,13 +170,8 @@
                             <p
                               class="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400"
                             >
-                              Frequency
+                              {{ products_detail.description }}
                             </p>
-                            <h2
-                              class="text-base font-semibold text-gray-700 dark:text-gray-400"
-                            >
-                              3.5 GHz
-                            </h2>
                           </div>
                         </div>
                       </div>
@@ -402,6 +237,7 @@
                 </button>
               </div>
               <a
+                @click="addToCart"
                 href="#"
                 class="w-full px-4 py-3 text-center text-blue-600 bg-blue-100 border border-blue-600 dark:hover:bg-gray-900 dark:text-gray-400 dark:border-gray-700 dark:bg-gray-700 hover:bg-blue-600 hover:text-gray-100 lg:w-1/2 rounded-xl"
               >
@@ -424,36 +260,40 @@
 </template>
 
 <script setup>
-import { Paginate, NavButton } from '@brutforce/vue3-paginate'
-
 const route = useRoute()
-console.log('route.params   ', route.params)
 
-let products = []
-let products_json = []
+let products_detail = []
 
-await fetch('https://fakestoreapi.com/products')
+await fetch(`https://fakestoreapi.com/products/${route.params.id}`)
 .then(res => res.json())
-.then(data => products_json = data);
+.then(data => products_detail = data);
 
-console.log('products_json   ', products_json)
+const emit = defineEmits(['addToCart'])
 
-products = products_json && products_json.slice(0, 6)
+// const emit = defineEmits({
+//   // Validate submit event
+//   addToCart: ({ data }) => {
+//     console.log('dataaaaaa   ', data)
+//     if (data) return true
+//     else return false
+//   }
+// })
 
-const page = ref(1)
-const currentPage = ref(1)
-const perPage = ref(6)
-const totalItems = ref((products_json && products_json.length) || 0)
-
-const paginate = (page) => {
-  currentPage.value = page
-  products = products_json.slice(((page -1) * 6), (page * 6))
+const addToCart = () => {
+  emit('addToCart', products_detail )
 }
 
 defineExpose({
-  products,
-  currentPage,
-  perPage,
-  totalItems,
+  products_detail,
+  addToCart
 })
 </script>
+
+<style>
+  .rating {
+    min-width: 150px;
+  }
+  .average-rating::before {
+    position: relative;
+  }
+</style>
