@@ -260,6 +260,9 @@
 </template>
 
 <script setup>
+import useCart from '../stores/cart'
+
+const cartStore = useCart()
 const route = useRoute()
 
 let products_detail = []
@@ -268,19 +271,8 @@ await fetch(`https://fakestoreapi.com/products/${route.params.id}`)
 .then(res => res.json())
 .then(data => products_detail = data);
 
-const emit = defineEmits(['addToCart'])
-
-// const emit = defineEmits({
-//   // Validate submit event
-//   addToCart: ({ data }) => {
-//     console.log('dataaaaaa   ', data)
-//     if (data) return true
-//     else return false
-//   }
-// })
-
 const addToCart = () => {
-  emit('addToCart', products_detail )
+  cartStore.addToCart(products_detail)
 }
 
 defineExpose({
