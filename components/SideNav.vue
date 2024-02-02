@@ -22,7 +22,7 @@
           currentRoute.includes(tab.path) ? 'text-secondary font-bold' : ''
         } pb-2`"
       >
-        <NuxtLink :to="`${tab.path}`"> {{ tab.title }} </NuxtLink>
+        <NuxtLink :to="`${tab.path}`"> {{ $t(tab.title) }} </NuxtLink>
       </div>
     </div>
   </div>

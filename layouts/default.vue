@@ -12,16 +12,22 @@
     <div class="w-full max-w-5xl max-h-screen px-12 overflow-y-auto pb-9 pt-5">
       <div class="flex flex-col items-end mb-10">
         <h1 class="flex justify-center items-center">
-          Welcome <span class="text-primary">{{ "  " + USER_NAME }}</span
-          >!
+          {{ $t('hello', { name: USER_NAME }) }}
           <span title="Logout" class="logout" @click="logout"><svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 16l4-4m0 0l-4-4 m4 4h-14m-4 -8 V20"></path></svg></span>
         </h1>
+        <div>
+          <span>{{ $t('language') }}: </span>
+          <select id="locale-select" v-model="$i18n.locale">
+            <option value="en">en</option>
+            <option value="ja">ja</option>
+          </select>
+        </div>
         <p class="mb-6 text-lg">
-          You have been given access to the private page 😁🤫
+          {{ $t('welcome_text') }} 😁🤫
         </p>
         
         <div class="offcanvas-header flex justify-center items-center">
-          <h5 id="offcanvasRightLabel">Shopping cart - $ {{ totalSum }}</h5>
+          <h5 id="offcanvasRightLabel">{{ $t('shopping_cart') }} - $ {{ totalSum }}</h5>
           <div class="bg-gray-100 flex justify-center items-center" data-popover-target="popover-click" data-popover-trigger="click">
             <div class="relative cursor-pointer">
               <div class="-mt-3 absolute left-3">
@@ -81,15 +87,15 @@ const removeFromCart = product => {
 
 const tabs = [
   {
-    title: 'Product',
+    title: 'product',
     path: '/product',
   },
   {
-    title: 'Company',
+    title: 'company',
     path: '/company',
   },
   {
-    title: 'Employee',
+    title: 'employee',
     path: '/employee',
   },  
 ]

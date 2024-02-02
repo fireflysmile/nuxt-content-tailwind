@@ -1,0 +1,13 @@
+{
+  "hello": "Hello: {name}!",
+  "language": "Language",
+  "welcome_text": "You have been given access to the private page",
+  "shopping_cart": "Shopping cart",
+  "product": "Product",
+  "company": "Company",
+  "employee": "Employee",
+  "first":"First",
+  "last":"Last",
+  "prev":"Pre",
+  "next":"Next"
+}
