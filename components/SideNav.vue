@@ -12,24 +12,27 @@
         <img
           src="/menu-close.png"
           class="h-6"
-          @click="$emit('toggleOpen', false)"
+          @click="closeMenu"
         />
       </div>
       <div
         v-for="tab in tabs"
         :key="tab.path"
         :class="`${
-          currentRoute === tab.path ? 'text-secondary font-bold' : ''
+          currentRoute.includes(tab.path) ? 'text-secondary font-bold' : ''
         } pb-2`"
       >
-        <NuxtLink :to="`${tab.path}`"> {{ tab.title }} </NuxtLink>
+        <NuxtLink :to="`${tab.path}`"> {{ $t(tab.title) }} </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  props: ['tabs', 'currentRoute'],
-};
+<script setup>
+  const props = defineProps(['tabs', 'currentRoute'])
+  const emit = defineEmits(['toggleOpen'])
+
+  const closeMenu = () => {
+    emit('toggleOpen', false)
+  }
 </script>

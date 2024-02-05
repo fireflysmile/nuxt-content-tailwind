@@ -1,5 +1,14 @@
+
+<script setup>
+definePageMeta({
+  middleware: 'auth',
+});
+</script>
+
 <template>
-  <main>
-    <ContentDoc />
-  </main>
+  <NuxtLayout>
+    <main>
+      <ContentDoc />
+    </main>
+  </NuxtLayout>
 </template>

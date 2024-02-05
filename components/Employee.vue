@@ -1,35 +1,40 @@
 <template>
-  <table class="table-fixed">
+  <table class="min-w-full table-fixed">
     <thead>
-      <tr>
-        <th>Email</th>
-        <th>username</th>
-        <th>phone</th>
+      <tr class="border-b border-primary text-neutral-800">
+        <th class="text-left px-6 py-4">Email</th>
+        <th class="text-left px-6 py-4">username</th>
+        <th class="text-left px-6 py-4">phone</th>
       </tr>
     </thead>
     <tbody>
       <template v-for="item in users" :key="item">
-        <tr>
-          <td>{{ item.email }}</td>
-          <td>{{ item.username }}</td>
-          <td>{{ item.phone }}</td>
+        <tr class="border-b border-primary text-neutral-800">
+          <td class="whitespace-nowrap px-6 py-4">{{ item.email }}</td>
+          <td class="whitespace-nowrap px-6 py-4">{{ item.username }}</td>
+          <td class="whitespace-nowrap px-6 py-4">{{ item.phone }}</td>
         </tr>
       </template>
     </tbody>
   </table>
+  <div class="flex justify-end">
+    <button @click="logout" class="p-3 bg-secondary text-white rounded-md mt-10"
+      >
+        <NuxtLink to="/employee/create">Create employee</NuxtLink>
+      </button
+    >
+  </div>
 </template>
 
 <script setup>
-  definePageMeta({
-    layout: 'private'
-  })
-  const config = useRuntimeConfig()
-  const ENV_APP_API = config.public.APP_API
+import { useEmployeeStore } from '../stores/employee'
 
-  const users = await $fetch(ENV_APP_API + "/users")
+const employeeStore = useEmployeeStore()
+employeeStore.fetchUsers()
+let users = computed(() => employeeStore.users)
 
-  defineExpose({
-    users,
-  })
+defineExpose({
+  users,
+})
 
 </script>
